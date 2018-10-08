@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "strict": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "lib": [
+            "es2015"
+        ],
+        "typeRoots": [],
+        "declaration": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "references": [
+        {
+            "path": "deploy-to-server"
+        }
+    ]
+}

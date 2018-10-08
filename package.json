@@ -1,0 +1,58 @@
+{
+  "name": "ssh-deploy",
+  "version": "0.1.0",
+  "description": "Easily deploy your project(s) to a server, and run custom commands on deployment via SSH. Tries to atomically deploy files.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "deploy-to-server/dist",
+    "deploy-to-server/package.json",
+    "deploy-to-server/package-lock.json",
+    "dist"
+  ],
+  "scripts": {
+    "typedoc": "typedoc --options typdedoc.js dist/index.d.ts --tsconfig tsconfig.typedoc.json",
+    "update-readme": "tsc --project gulp/doc && gulp update-readme --gulpfile gulp/gulpfile.ts",
+    "tsc": "tsc -b --clean && tsc -b",
+    "update-all-docs": "run-p typedoc update-readme",
+    "prepare": "run-s tsc update-all-docs",
+    "pre-git-commit": "run-s tsc update-all-docs"
+  },
+  "pre-commit": [
+    "pre-git-commit"
+  ],
+  "keywords": [
+    "deploy",
+    "ssh",
+    "script",
+    "server",
+    "command"
+  ],
+  "repository": "github:arogg/ssh-deploy",
+  "author": "Alexander Rogg",
+  "license": "MIT",
+  "engines": {
+		"node": ">=8"
+	},
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "scp2": "^0.5.0",
+    "simple-ssh": "^1.0.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.4",
+    "@types/gulp": "^4.0.5",
+    "@types/node": "^10.11.4",
+    "@types/rimraf": "^2.0.2",
+    "@types/uuid": "^3.4.4",
+    "gulp": "^4.0.0",
+    "npm-run-all": "^4.1.3",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "typedoc": "^0.12.0",
+    "typedoc-plugin-markdown": "^1.1.16",
+    "typescript": "^3.1.1"
+  }
+}

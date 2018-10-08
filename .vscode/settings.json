@@ -1,0 +1,15 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "markdown"
+    ],
+    "files.exclude": {
+        "dist": true,
+        "**/node_modules": true,
+        "deploy-to-server/dist": true
+    }
+}

@@ -1,0 +1,5 @@
+- Add Changelog file
+- Make more stuff parallel
+- Maybe also run scripts from local node_modules
+- Rename typedoc.js file (somehow windows always asks what to open the file with when I run type doc if it is named "typedoc.js")
+- Sanitize options and throw if wrong

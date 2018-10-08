@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "allowJs": true,
+        "target": "es2015",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "strict": true,
+        "noEmit": true,
+        "lib": [
+            "es2015"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "ssh-deploy": [
+                "../../src"
+            ]
+        }
+    },
+    "files": [
+        "../../deploy-to-server/src/deployServerOptions.ts"
+    ],
+    "include": [
+        "**/*",
+        "../../src/**/*"
+    ]
+}
